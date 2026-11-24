@@ -41,12 +41,6 @@ Project Blackwall is a high-performance, local-first security sidecar built in R
 
 ---
 
-## Build & Verification
-
-### Prerequisites
-* Rust toolchain (`cargo` / `rustc`)
-* Local ONNX model weights placed in `./models/` (excluded from Git via `.gitignore`)
-
 ## Request a 30-Day Technical Sandbox Evaluation
 Project Blackwall is distributed as a stripped, air-gapped OCI container for B2B OEM evaluation. 
 To request a time-limited evaluation binary or schedule a 15-minute live terminal walkthrough, contact the founding team:
