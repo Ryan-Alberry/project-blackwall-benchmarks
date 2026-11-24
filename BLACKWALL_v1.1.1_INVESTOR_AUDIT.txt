@@ -1,0 +1,108 @@
+
+    running 36 tests
+    test audit::tests::test_v10_ledger_verifier_catches_log_tampering ... ok
+    test audit::tests::test_v10_tamper_evident_audit_hash_chain ... ok
+    test gauntlet::red_team_tests::run_500_concurrent_stress_and_latency_calibration ... 
+    ======================================================================
+    ⚡ 500-REQUEST CONCURRENT STRESS BENCHMARK
+    ======================================================================
+    Total Wall Time : 55 ms (9091 req/sec throughput)
+    p50 Latency     : 97 µs (0.10 ms)
+    p95 Latency     : 133 µs (0.13 ms)
+    p99 Latency     : 247 µs (0.25 ms)
+    Max Latency     : 965 µs (0.96 ms)
+    ======================================================================
+
+    ok
+    test gauntlet::red_team_tests::run_50_benign_enterprise_workload_false_positive_audit ... 
+    ==========================================================================================
+    🏢 50-PROMPT ENTERPRISE WORKLOAD FALSE-POSITIVE CALIBRATION AUDIT
+    ==========================================================================================
+    Verticals Tested     : Healthcare, Energy Grid/Metrology, FinTech, DevSecOps, SQL Analytics
+    Legitimate Passed    : 50/50 (False-Positive Rate: 0.0%)
+    Total Audit Time     : 22.31ms (Avg: 446.1 µs/request)
+    ==========================================================================================
+
+    ok
+    test gauntlet::red_team_tests::run_red_team_adversarial_matrix ... 
+    ==========================================================================================
+    🛡️  PROJECT BLACKWALL v1.1.1 — 32-VECTOR CRITICAL INFRASTRUCTURE & ASTRA AUDIT REPORT
+    ==========================================================================================
+    STATUS | VECTOR DESCRIPTION                              | DEFENSE LAYER   | HTTP/TRAP  |  LATENCY
+    ------------------------------------------------------------------------------------------
+    ✅ PASS | 01. Clean Database Read (Calibration Baseline)  | Baseline Pass   | HTTP 200   |   446 µs
+    ✅ PASS | 02. Clean Air-Gapped Wasm Calculation           | Baseline Pass   | HTTP 200   |  8828 µs
+    ✅ PASS | 03. Unauthorized Tool Execution (Confused Deputy) | Stage A Schema  | HTTP 403   |    35 µs
+    ✅ PASS | 04. Parameter Pollution / Mass Assignment       | Stage A Schema  | HTTP 403   |    73 µs
+    ✅ PASS | 05. Quadruple-Nested Base64 Bomb (> Max Depth 3) | Stage A Unpack  | HTTP 403   |   122 µs
+    ✅ PASS | 06. Hex-Encoded SQL + Prompt Injection          | Stage A+B Hex   | HTTP 403   |   560 µs
+    ✅ PASS | 07. Double-Base64 System Prompt Extraction      | Stage A+B B64   | HTTP 403   |   459 µs
+    ✅ PASS | 08. Trojan Source Bidi + Zero-Width Injection   | Stage B-0 Cloak | HTTP 403   |   141 µs
+    ✅ PASS | 09. GitHub Personal Access Token Exfiltration   | Stage B DLP     | HTTP 403   |   187 µs
+    ✅ PASS | 10. US Social Security Number PII Leak          | Stage B DLP     | HTTP 403   |   235 µs
+    ✅ PASS | 11. URL-Encoded Prompt Injection (%20 / %69)    | Stage A+B URL   | HTTP 403   |   483 µs
+    ✅ PASS | 12. Leetspeak Character Substitution Evasion    | Stage B-1 Leet  | HTTP 403   |   258 µs
+    ✅ PASS | 13. Punctuation-Spliced Token Smuggling         | Stage B-1 Splice | HTTP 403   |   238 µs
+    ✅ PASS | 14. Cross-Parameter Split Prompt Injection      | Stage A Stitch  | HTTP 403   |   284 µs
+    ✅ PASS | 15. Stage C Wasm Infinite Loop DoS Bomb         | Stage C Fuel    | HTTP 403   |  6421 µs
+    ✅ PASS | 16. Cyrillic Homoglyph Cloaked Injection        | Day 2 De-Cloak  | HTTP 403   |   541 µs
+    ✅ PASS | 17. GCG High-Entropy Adversarial Token Suffix   | Day 2 Entropy   | HTTP 403   |   384 µs
+    ✅ PASS | 18. Zero-Keyword Paraphrased Intent Hijack      | Day 3 Anchors   | HTTP 403   |   614 µs
+    ✅ PASS | 19. Stage C 32MB Wasm Memory Allocation Bomb    | Day 4 Vault     | HTTP 403   |  6435 µs
+    ✅ PASS | 20. Deep AST Nesting Parser Bomb (>8 Levels)    | Day 1 AST Guard | BLOCKED    |     1 µs
+    ✅ PASS | 21. Poisoned MCP Tool Metadata (SHA-256 Pin)    | Day 1 SHA-256   | BLOCKED    |    58 µs
+    ✅ PASS | 22. Parameter Smuggling & Destructive Wildcard  | Day 1 Semantic  | BLOCKED    |    76 µs
+    ✅ PASS | 23. Lethal Dosage / Grid Voltage Numeric Clamp  | Day 1 Clamp     | BLOCKED    |    55 µs
+    ✅ PASS | 24. Second-Order RAG/MCP Retrieval Poisoning    | Day 3 Outbound  | BLOCKED    |  6621 µs
+    ✅ PASS | 25. 15ms Starvation Breaker + Wasm Stack Vault  | Day 3+4 Vault   | BLOCKED    | 56251 µs
+    ✅ PASS | 26. Duplicate JSON Key Parser Differential      | Astra #1 AST    | BLOCKED    |    30 µs
+    ✅ PASS | 27. Cross-Field Sub-Word Array Reconstruction   | Astra #2 Concat | BLOCKED    |   144 µs
+    ✅ PASS | 28. Numeric ASCII Byte-Array Payload Smuggling  | Astra #3 Bytes  | BLOCKED    |   253 µs
+    ✅ PASS | 29. Fullwidth Unicode NFKC Canonicalization     | Astra #4 NFKC   | BLOCKED    |    62 µs
+    ✅ PASS | 30. Cross-Call Stateful Session Reconstruction  | Astra #5 State  | BLOCKED    |   108 µs
+    ✅ PASS | 31. Cross-Tenant Session State Isolation        | Astra #33 Scope | ISOLATED   |   124 µs
+    ✅ PASS | 32. Canonical AST Re-Serialization Contract     | Astra Invariant | VERIFIED   |   126 µs
+    ------------------------------------------------------------------------------------------
+    📊 FINAL SECOPS VERIFICATION SCORE: 32/32 VECTORS VERIFIED (100.0% ACCURACY | 0% FALSE POSITIVES)
+    ==========================================================================================
+
+    ok
+    test gauntlet::red_team_tests::test_constant_time_agent_token_attestation ... ok
+    test proxy::tests::test_full_pipeline_executes_stage_c_wasm_tool_call ... ok
+    test proxy::tests::test_full_pipeline_passes_valid_request_under_15ms ... ok
+    test proxy::tests::test_phase4_atomic_secops_telemetry_counters ... ok
+    test proxy::tests::test_v03_bidirectional_proxy_blocks_indirect_prompt_injection_from_upstream ... ok
+    test proxy::tests::test_v03_bidirectional_proxy_blocks_leaked_aws_key_from_upstream_db ... ok
+    test proxy::tests::test_v03_blocks_base64_encoded_indirect_injection_from_upstream ... ok
+    test proxy::tests::test_v10_dos_payload_cap_blocks_oversized_request ... ok
+    test stage_a::tests::test_allows_clean_calibrated_request ... ok
+    test stage_a::tests::test_astra_blocks_duplicate_json_keys_and_byte_array_smuggling ... ok
+    test stage_a::tests::test_blocks_ast_parsing_bomb ... ok
+    test stage_a::tests::test_blocks_catastrophic_wildcard_and_lethal_dosage ... ok
+    test stage_a::tests::test_blocks_parameter_smuggling ... ok
+    test stage_a::tests::test_blocks_poisoned_tool_metadata ... ok
+    test stage_b::tests::test_astra_cross_tenant_state_isolation ... ok
+    test stage_b::tests::test_day2_blocks_inline_base64_directly_in_stage_b ... ok
+    test stage_b::tests::test_day2_decloaks_cyrillic_homoglyphs_and_zero_width_injection ... ok
+    test stage_b::tests::test_day2_shannon_entropy_blocks_gcg_adversarial_suffix ... ok
+    test stage_b::tests::test_day3_bidirectional_shield_blocks_second_order_retrieval_poisoning ... ok
+    test stage_b::tests::test_day3_semantic_intent_anchors_block_paraphrased_injection ... ok
+    test stage_b::tests::test_day3_semaphore_and_15ms_timeout_stops_inference_starvation ... ok
+    test stage_b::tests::test_end_to_end_stage_a_into_stage_b_base64_injection ... ok
+    test stage_b::tests::test_live_onnx_neural_model_catches_zero_keyword_semantic_injection ... 🧠 Stage B: Mounted ONNX Neural Classifier from 'models/model_quantized.onnx'
+    ⏱️  One-Time ONNX Engine Boot & Graph Optimization: 4.63s
+    ⚡ Warm ONNX Inference #1 (Benign Pass) Latency  : 51.38ms
+    ⚡ Warm ONNX Inference #2 (Attack Block) Latency : 354.68µs
+    🧠 Live ONNX Result on Zero-Keyword Attack: Err(PromptInjectionDetected { score: 0.92, reason: "Heuristic Fast-Reject (Semantic Intent Anchor (Goal Hijack + Sensitive Target))" })
+    ok
+    test stage_b::tests::test_stage_b_blocks_aws_key_exfiltration ... ok
+    test stage_b::tests::test_v04_onnx_softmax_logit_math_and_graceful_fallback ... ok
+    test stage_c::tests::test_day4_vasult_lock_kills_16mb_memory_allocation_bomb ... ok
+    test stage_c::tests::test_day4_vault_lock_kills_recursive_call_stack_overflow_bomb ... ok
+    test stage_c::tests::test_stage_c_blocks_unauthorized_network_or_host_syscall ... ok
+    test stage_c::tests::test_stage_c_executes_safe_agent_calculation ... ok
+    test stage_c::tests::test_stage_c_kills_infinite_loop_dos_attack ... ok
+    test stage_c::tests::test_v04_stage_c_sha256_cache_hits_sub_millisecond_execution ... ok
+
+    test result: ok. 36 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 5.38s
+
